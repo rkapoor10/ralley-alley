@@ -1,16 +1,18 @@
-import "./App.css";
-import MockMan from "mockman-js";
-import {Routes, Route, Link} from "react-router-dom";
-// import Home from "./pages/home"
+// import "./App.css";
+import Router from "./router/Router";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/mockman" element={<MockMan/>}></Route>
-      </Routes>
-
-      <Link to="/mockman">Go to mockman</Link>
+      <Link to="/mockman">Go to MockMan || </Link>
+      <Link to="/home">HomePage || </Link>
+      <Link to="/products">Products Page || </Link>
+      <Link to="/wishlist">Wishlist Page || </Link>
+      <Link to="/cart">Cart Page || </Link>
+      <Link to="/login">Login Form || </Link>
+      <Link to="/signup">SignUp Form </Link>
+      <Router />
     </div>
   );
 }
