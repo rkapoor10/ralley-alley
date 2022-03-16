@@ -1,0 +1,9 @@
+import React from "react"
+
+const CartPage = ()=>{
+    return(
+        <h1>This is Cart Page</h1>
+    )
+}
+
+export default CartPage;
