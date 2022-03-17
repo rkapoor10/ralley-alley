@@ -9,6 +9,7 @@ const Navbar = () => {
   return (
     <header className=" lp-header navbar-container-flex bg-white">
       <div className="nav-title">
+        <h1>The</h1>
         <Logo/>
         <BrandTitle/>
       </div>

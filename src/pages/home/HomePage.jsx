@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../../components/shared/navbar/Navbar";
-import Footer from "../../components/shared/footer/Footer";
+import Navbar from "../../components/shared/navbar/NavbarComponent";
+import Footer from "../../components/shared/footer/FooterComponent";
 
 
 const HomePage = () => {
