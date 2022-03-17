@@ -1,10 +1,14 @@
 import React from "react";
-import "./home-page.css";
+import Navbar from "../../components/shared/navbar/Navbar";
+import Footer from "../../components/shared/footer/Footer";
+
 
 const HomePage = () => {
   return (
     <>
       <h1>This is Home Page</h1>
+      <Navbar/>
+      <Footer/>
     </>
   );
 };
