@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../Logo";
 import BrandTitle from "../BrandTitle";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,15 +16,12 @@ const Footer = () => {
           </div>
           <div class="footer-socials gray">
             <li>
-              {" "}
               <a href="./">Youtube</a>
             </li>
             <li>
-              {" "}
               <a href="./">Instagram</a>
             </li>
             <li>
-              {" "}
               <a href="./">Twitter</a>
             </li>
           </div>
@@ -32,13 +30,13 @@ const Footer = () => {
         <div class="child-2 footer-middle-wrapper">
           <div class="category-flex fw-bold gray">
             <div class="category">
-              <a href="/products-page/products.html">Racquets |</a>
+              <Link  to="/products">Racquets |</Link>
             </div>
             <div class="category">
-              <a href="/products-page/products.html">Shoes |</a>
+              <Link  to="/products">Shoes |</Link>
             </div>
             <div class="category">
-              <a href="/products-page/products.html">Apparel</a>
+              <Link  to="/products">Apparel</Link>
             </div>
           </div>
           <div class="category-flex"></div>
