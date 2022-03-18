@@ -4,6 +4,7 @@ import Footer from "../../components/shared/footer/FooterComponent";
 import BannerLarge from "../../components/banner/BannerLarge";
 import Category from "../../components/category/Category";
 import BannerSmall from "../../components/banner/BannerSmall";
+import BannerBrands from "../../components/banner/BannerBrands";
 
 
 const HomePage = () => {
@@ -14,6 +15,7 @@ const HomePage = () => {
       <BannerLarge/>
       <Category/>
       <BannerSmall/>
+      <BannerBrands/>
     </div>
       
       <Footer/>

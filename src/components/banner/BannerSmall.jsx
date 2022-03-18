@@ -10,7 +10,7 @@ const BannerSmall = () => {
             <source
               media="(min-width:1050px)"
               srcset="
-                  https://st4.depositphotos.com/1037473/23180/i/600/depositphotos_231806688-stock-photo-badminton-racket-shuttlecock-closeup.jpg
+              https://cdn.wallpapersafari.com/24/64/3sv8EZ.jpg
                 "
             />
             <img src="https://wallpaperaccess.com/full/7484898.jpg " alt="" />
