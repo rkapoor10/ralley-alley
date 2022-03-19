@@ -1,0 +1,7 @@
+.image-container{
+    height: 16rem;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    object-fit: contain;
+}
