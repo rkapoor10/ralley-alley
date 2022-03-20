@@ -9,7 +9,7 @@ const BannerSmall = () => {
           <picture>
             <source
               media="(min-width:1050px)"
-              srcset="
+              srcSet="
               https://cdn.wallpapersafari.com/24/64/3sv8EZ.jpg
                 "
             />

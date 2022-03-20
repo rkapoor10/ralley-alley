@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer class="bg-black">
-      <div class="white footer-container-ec">
-        <div class="child-1 footer-top-wrapper">
-          <div class="footer-logo">
-            <div class="nav-title">
+    <footer className="bg-black">
+      <div className="white footer-container-ec">
+        <div className="child-1 footer-top-wrapper">
+          <div className="footer-logo">
+            <div className="nav-title">
               <Logo/>
               <BrandTitle/>
             </div>
           </div>
-          <div class="footer-socials gray">
+          <div className="footer-socials gray">
             <li>
               <a href="./">Youtube</a>
             </li>
@@ -27,24 +27,24 @@ const Footer = () => {
           </div>
         </div>
 
-        <div class="child-2 footer-middle-wrapper">
-          <div class="category-flex fw-bold gray">
-            <div class="category">
+        <div className="child-2 footer-middle-wrapper">
+          <div className="category-flex fw-bold gray">
+            <div className="category">
               <Link  to="/products">Racquets |</Link>
             </div>
-            <div class="category">
+            <div className="category">
               <Link  to="/products">Shoes |</Link>
             </div>
-            <div class="category">
+            <div className="category">
               <Link  to="/products">Apparel</Link>
             </div>
           </div>
-          <div class="category-flex"></div>
+          <div className="category-flex"></div>
         </div>
 
-        <div class="child-3 gray footer-bottom-wrapper">
-          <div class="copyright">© 2022 SWIFT-UI</div>
-          <ul class="credits wrapit flex-txt">
+        <div className="child-3 gray footer-bottom-wrapper">
+          <div className="copyright">© 2022 SWIFT-UI</div>
+          <ul className="credits wrapit flex-txt">
             <li>
               <a href="https://swift-uiv1.netlify.app/">Swift UI</a>
             </li>
