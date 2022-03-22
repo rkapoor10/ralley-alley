@@ -1,5 +1,23 @@
 import React from "react";
-
+const HIGH_TO_LOW = "HIGH_TO_LOW";
+const LOW_TO_HIGH = "LOW_TO_HIGH";
+const initialState = {
+    highToLow: false,
+    lowToHigh: false,
+    discount: {
+      "10_OR_BELOW": false,
+      "10_OR_ABOVE": false,
+      "30_OR_ABOVE": false,
+    },
+    category: {
+      racquets: false,
+      shoes: false,
+      apparel: false,
+      bags: false,
+    },
+    ratings: 0,
+    priceRange: 2000,
+  };
 const filterReducer = (state, action) => {
     switch (action.type) {
       case HIGH_TO_LOW:
@@ -51,27 +69,11 @@ const filterReducer = (state, action) => {
         return { ...state, priceRange: action.payload.value };
 
       case "RESET_FILTERS":
-        return {
-          highToLow: false,
-          lowToHigh: false,
-          discount: {
-            "10_OR_BELOW": false,
-            "10_OR_ABOVE": false,
-            "30_OR_ABOVE": false,
-          },
-          category: {
-            racquets: false,
-            shoes: false,
-            apparel: false,
-            bags: false,
-          },
-          ratings: 0,
-          priceRange: 2000,
-        };
+        return initialState
       default:
         return state;
     }
   };
 
 
-  export {filterReducer}
+  export {filterReducer,initialState, HIGH_TO_LOW,LOW_TO_HIGH}

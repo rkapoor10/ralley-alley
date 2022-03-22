@@ -13,9 +13,8 @@ import {
   ratingsFilter,
   priceRangeFilter,
 } from "../../utils/filtersFunctions";
-import { filterReducer } from "./filterReducer";
-export const HIGH_TO_LOW = "HIGH_TO_LOW";
-export const LOW_TO_HIGH = "LOW_TO_HIGH";
+import { filterReducer, initialState} from "./filterReducer";
+
 
 const defaultContextValue = {};
 
@@ -36,7 +35,7 @@ const FilterProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => fetchProducts(), []);
+  useEffect(() => fetchProducts(), []); 
 
   const [state, dispatch] = useReducer(filterReducer, {
     highToLow: false,

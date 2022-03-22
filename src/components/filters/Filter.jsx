@@ -1,5 +1,5 @@
 import React from "react";
-import { LOW_TO_HIGH, HIGH_TO_LOW } from "../../context/filterContext/FilterContext";
+import { HIGH_TO_LOW, LOW_TO_HIGH } from "../../context/filterContext/filterReducer";
 import { useFilter } from "../../context/filterContext/FilterContext";
 
 const FilterSidebar = () => {

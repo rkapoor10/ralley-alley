@@ -24,23 +24,19 @@ const discountFilter = (state, data) => {
 const categoryFilter = (state, data) => {
 
   const categoriesArray = Object.keys(state.category).filter((value)=>state.category[value] === true)
-  if(categoriesArray.length===0){
-    return data;
-  }
+  if(categoriesArray.length===0)return data
   return data.filter((product)=> categoriesArray.includes(product.categoryName))
 
 };
 
-const ratingsFilter = (state, data) => {
-  return data.filter(
+const ratingsFilter = (state, data) => data.filter(
     (products) => Number(products.ratings.stars) >= Number(state.ratings)
   );
-};
 
-const priceRangeFilter = (state, data) => {
-  return data.filter(
+
+const priceRangeFilter = (state, data) => data.filter(
     (product) => Number(product.price) <= Number(state.priceRange)
   );
-};
+
 
 export { sortByPrice, discountFilter, categoryFilter, ratingsFilter,priceRangeFilter };
