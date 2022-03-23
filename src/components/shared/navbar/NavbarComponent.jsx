@@ -7,7 +7,7 @@ import NavIcons from "./NavIcons";
 
 const Navbar = () => {
   return (
-    <header className=" lp-header navbar-container-flex bg-white">
+    <header className="lp-header navbar-container-flex bg-white">
       <div className="nav-title">
         <Logo/>
         <BrandTitle/>
