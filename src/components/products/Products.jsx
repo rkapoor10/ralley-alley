@@ -1,31 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BsHeart } from "react-icons/bs";
 import { BsStarFill } from "react-icons/bs";
 import DiscountedPrice from "../../utils/DiscountedPrice";
+import { useFilter } from "../../context/filterContext/FilterContext";
 import "./products.css";
-import axios from "axios";
-
 
 const Products = () => {
-  const [productsList, setProductsList] = useState([]);
-
-  const loadProducts = async () => {
-    try {
-      const response  = await axios.get("/api/products");
-       console.log(response.data);
-      setProductsList(response.data.products);
-    } catch {
-      console.log("caught error from products.jsx");
-      //todo: toast addition
-    }
-  };
-  useEffect(() => loadProducts(), []);
+  const { filteredProducts } = useFilter();
 
   return (
     <div className="child pd-products-layout">
       <div className="grid-column-layout">
-        {productsList.map(
+        {filteredProducts.map(
           ({
+            id,
             title,
             categoryName,
             brand,
@@ -35,15 +23,15 @@ const Products = () => {
             ratings,
             stockQty,
             discount,
-            comingSoon
+            comingSoon,
           }) => {
             return (
-              <div className="card-container parent-container">
+              <div key={id} className="card-container parent-container">
                 <div className="parent-image">
                   <img className="image-container" src={image} alt={title} />
                   <div className="tags-flex">
-                    {tags ? (
-                      tags === "new" ? (
+                    {tags &&
+                      (tags === "new" ? (
                         <div className="tags-badge child-tags bg-baseblue">
                           New
                         </div>
@@ -51,10 +39,7 @@ const Products = () => {
                         <div className="tags-badge child-tags bg-baseorange">
                           Trending
                         </div>
-                      )
-                    ) : (
-                      <></>
-                    )}
+                      ))}
                     <button className="btn-round btn-heart txt-s lightteal child-wishlist">
                       <BsHeart />
                     </button>
@@ -75,10 +60,10 @@ const Products = () => {
                 {stockQty ? (
                   <>
                     <p className="price-box txt-xs fw-bold">
-                      Rs. {DiscountedPrice(price,discount)}{" "}
+                      Rs. {DiscountedPrice(price, discount)}{" "}
                       <s className="striked">Rs. {price} </s>
                       <span className="discount darkorange">
-                         ({discount}% OFF)
+                        ({discount}% OFF)
                       </span>
                     </p>
                     <button className="btn buy-btn-padding txt-xs btn-solid cta-btn bg-lightteal white fw-semibold">
@@ -109,12 +94,13 @@ const Products = () => {
                     </button>
                   </>
                 )}
-                {(comingSoon)?<div className="overlay-text fs-2 fw-bold">COMING SOON!</div>:<></>}
+                {comingSoon && (
+                  <div className="overlay-text fs-2 fw-bold">COMING SOON!</div>
+                )}
               </div>
             );
           }
         )}
-        
       </div>
     </div>
   );
