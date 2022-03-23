@@ -1,5 +1,6 @@
 import React from "react"
 import {MdLocationPin} from "react-icons/md"  
+import {BsHeart} from "react-icons/bs"
 
 const CartProducts = () => {
     return(
@@ -32,8 +33,7 @@ const CartProducts = () => {
                     </div>
                     <div>
                         <button className="btn-secondary txt-s"> REMOVE</button>
-                        <button className="btn-secondary txt-s baseteal"><i className="far fa-heart"></i>
-                            WISHLIST</button>
+                        <button className="btn-secondary txt-s baseteal"><BsHeart/> WISHLIST</button>
                     </div>
                 </div>
 
@@ -55,8 +55,7 @@ const CartProducts = () => {
                     </div>
                     <div>
                         <button className="btn-secondary txt-s"> REMOVE</button>
-                        <button className="btn-secondary txt-s baseteal"><i className="far fa-heart"></i>
-                            WISHLIST</button>
+                        <button className="btn-secondary txt-s baseteal"><BsHeart/> WISHLIST</button>
                     </div>
                 </div>
 
@@ -78,8 +77,7 @@ const CartProducts = () => {
                     </div>
                     <div>
                         <button className="btn-secondary txt-s"> REMOVE</button>
-                        <button className="btn-secondary txt-s baseteal"><i className="far fa-heart"></i>
-                            WISHLIST</button>
+                        <button className="btn-secondary txt-s baseteal"><BsHeart/> WISHLIST</button>
                     </div>
                 </div>
 
