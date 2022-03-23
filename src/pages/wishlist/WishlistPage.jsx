@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import Footer from "../../components/shared/footer/FooterComponent";
+import Navbar from "../../components/shared/navbar/NavbarComponent";
+import WishlistProducts from "../../components/wishlist/WishlistProducts";
 
-const WishlistPage = ()=>{
+const WishlistPage = () => {
   return (
-    <h1>This is Wishlist Page</h1>
-  )
-}
+    <div className="wishlist-pg-layout">
+      <div className="child wishlist-pg-navbar">
+        <Navbar />
+      </div>
+      <div className="child wishlist-pg-main pad-1">
+        <WishlistProducts/>
+      </div>
+      <div className="child wishlist-pg-footer">
+        <Footer />
+      </div>
+    </div>
+  );
+};
 
-export default WishlistPage
+export default WishlistPage;
