@@ -1,9 +1,16 @@
-import React from "react"
+import React from "react";
+import Signup from "../../components/auth/Signup";
+import Footer from "../../components/shared/footer/FooterComponent";
+import Navbar from "../../components/shared/navbar/NavbarComponent";
 
 const SignupForm = () => {
-    return(
-        <h1>This is SignUp Form</h1>
-    )
-}
+  return (
+    <>
+      <Navbar />
+      <Signup />
+      <Footer />
+    </>
+  );
+};
 
-export default SignupForm
+export default SignupForm;
