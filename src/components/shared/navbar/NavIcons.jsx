@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { BsHeart } from "react-icons/bs";
+import "./navicons.css"
 import NavIconsStyles from "../NavIconsStyles";
 
 const NavIcons = () => {
@@ -15,10 +16,23 @@ const NavIcons = () => {
         <Link to="/login">Login</Link>
       </button>
       <Link to="/wishlist">
-        <BsHeart className="navbar-icons fs-15 gray" />
+        <div className="badge-parent">
+          <BsHeart className="navbar-icons gray icon white" title="Cart" />
+          <div className="badge-font icons-disp bg-basepink badge-top white">
+            10
+          </div>
+        </div>
       </Link>
       <Link to="/cart">
-        <FaShoppingCart className="navbar-icons fs-15 gray" title="Cart" />
+        <div class="badge-parent">
+          <FaShoppingCart
+            className="navbar-icons gray icon white"
+            title="Cart"
+          />
+          <div className="badge-font icons-disp bg-basepink badge-top white">
+            10
+          </div>
+        </div>
       </Link>
     </NavIconsStyles>
   );

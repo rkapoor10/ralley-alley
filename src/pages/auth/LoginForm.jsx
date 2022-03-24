@@ -1,9 +1,16 @@
-import React from "react"
+import React from "react";
+import Login from "../../components/auth/Login.jsx";
+import Footer from "../../components/shared/footer/FooterComponent";
+import Navbar from "../../components/shared/navbar/NavbarComponent";
 
 const LoginForm = () => {
-    return(
-        <h1>This is Login Form</h1>
-    )
-}
+  return (
+    <>
+      <Navbar />
+      <Login />
+      <Footer />
+    </>
+  );
+};
 
-export default LoginForm
+export default LoginForm;
