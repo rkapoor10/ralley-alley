@@ -18,29 +18,30 @@ const CartProducts = () => {
 
       <div className="cart-products flex-column-center">
         {cartState.cart.map((product) => {
+          const {id,image,title,brand,categoryName,qty,price,discount} = product
           return (
-            <div key={product.id} className="card-container-horizontal">
+            <div key={id} className="card-container-horizontal">
               <div className="flex-txt">
                 <img
                   className="image-container-horizontal"
-                  src={product.image}
-                  alt={product.title}
+                  src={image}
+                  alt={title}
                 />
                 <div>
-                  <h3>{product.title}</h3>
-                  <p className="title-small txt-s mb-1">{product.brand} <span className="gray">{product.categoryName}</span></p>
+                  <h3>{title}</h3>
+                  <p className="title-small txt-s mb-1">{brand} <span className="gray">{categoryName}</span></p>
                   <div className="flex-txt mb-1">
                     <button className="btn-round-small txt-s baseteal" onClick={()=>cartDispatch({type:"ADD_TO_CART",payload:product})}>
                       +
                     </button>
-                    <span className="txt-s">{product.qty}</span>
+                    <span className="txt-s">{qty}</span>
                     <button className="btn-round-small txt-s baseteal " onClick={()=>cartDispatch({type:"DECREMENT", payload:product})}>
                       -
                     </button>
                   </div>
                   <p className="mtb-1 price-box txt-xs fw-bold">
-                  {DiscountedPrice(product.price, product.discount)} <s className="striked">Rs.{product.price}</s>
-                    <span className="discount darkorange">({product.discount}% OFF)</span>
+                  {DiscountedPrice(price, discount)} <s className="striked">Rs.{price}</s>
+                    <span className="discount darkorange">({discount}% OFF)</span>
                   </p>
                 </div>
               </div>

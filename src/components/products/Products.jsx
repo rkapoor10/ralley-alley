@@ -14,13 +14,14 @@ const Products = () => {
       <div className="grid-column-layout">
         {filteredProducts.map(
           (product) => {
+            const {id,image,title,tags,ratings,brand,categoryName,stockQty,price,discount,comingSoon} = product
             return (
-              <div key={product.id} className="card-container parent-container">
+              <div key={id} className="card-container parent-container">
                 <div className="parent-image">
-                  <img className="image-container" src={product.image} alt={product.title} />
+                  <img className="image-container" src={image} alt={title} />
                   <div className="tags-flex">
-                    {product.tags &&
-                      (product.tags === "new" ? (
+                    {tags &&
+                      (tags === "new" ? (
                         <div className="tags-badge child-tags bg-baseblue">
                           New
                         </div>
@@ -34,25 +35,25 @@ const Products = () => {
                     </button>
                   </div>
                   <span className="child-rating rating-box fw-semibold">
-                    {product.ratings.stars} <BsStarFill className="baseteal" /> |{" "}
-                    {product.ratings.count}
+                    {ratings.stars} <BsStarFill className="baseteal" /> |{" "}
+                    {ratings.count}
                   </span>
                 </div>
 
                 <div className="title">
-                  <h3>{product.title}</h3>
+                  <h3>{title}</h3>
                   <p className="title-small txt-s black">
-                    {product.brand} <span className="gray">{product.categoryName}</span>
+                    {brand} <span className="gray">{categoryName}</span>
                   </p>
                 </div>
 
-                {product.stockQty ? (
+                {stockQty ? (
                   <>
                     <p className="price-box txt-xs fw-bold">
-                      Rs. {DiscountedPrice(product.price, product.discount)}
-                      <s className="striked">Rs. {product.price} </s>
+                      Rs. {DiscountedPrice(price, discount)}
+                      <s className="striked">Rs. {price} </s>
                       <span className="discount darkorange">
-                        ({product.discount}% OFF)
+                        ({discount}% OFF)
                       </span>
                     </p>
                     <button className="btn buy-btn-padding txt-xs btn-solid cta-btn bg-lightteal white fw-semibold">
@@ -73,8 +74,8 @@ const Products = () => {
                 ) : (
                   <>
                     <s className="price-box txt-xs fw-bold">
-                      Rs. {DiscountedPrice(product.price, product.discount)} <s className="striked">Rs. {product.price}</s>
-                      <span className="discount darkorange">({product.discount}% OFF)</span>
+                      Rs. {DiscountedPrice(price, discount)} <s className="striked">Rs. {price}</s>
+                      <span className="discount darkorange">({discount}% OFF)</span>
                     </s>
                     <button
                       className="btn buy-btn-padding txt-xs btn-solid white fw-semibold btn-disable"
@@ -91,7 +92,7 @@ const Products = () => {
                     </button>
                   </>
                 )}
-                {product.comingSoon && (
+                {comingSoon && (
                   <div className="overlay-text fs-2 fw-bold">COMING SOON!</div>
                 )}
               </div>

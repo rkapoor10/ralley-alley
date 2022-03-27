@@ -32,8 +32,7 @@ const NavIcons = () => {
             className="navbar-icons gray icon white"
             title="Cart"
           />
-          {(cartState.totalCartItems===0)?
-            null:<div className="badge-font icons-disp bg-basepink badge-top white">
+          {(cartState.totalCartItems!==0)&&<div className="badge-font icons-disp bg-basepink badge-top white">
             {cartState.totalCartItems}
           </div>
         }
