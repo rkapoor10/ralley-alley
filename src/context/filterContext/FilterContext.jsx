@@ -30,7 +30,7 @@ const FilterProvider = ({ children }) => {
       const { data } = await axios.get("/api/products");
       setProductsList(data.products);
     } catch (error) {
-        // yahan or better kya kr skte hai
+        
       console.log("Fetch Products Fail! in FilterContext.jsx");
     }
   };
@@ -47,7 +47,7 @@ const FilterProvider = ({ children }) => {
     },
     category: { racquets: false, shoes: false, apparel: false, bags: false },
     ratings: 0,
-    priceRange: 2000,
+    priceRange: 20000,
   });
 
   const compose =
