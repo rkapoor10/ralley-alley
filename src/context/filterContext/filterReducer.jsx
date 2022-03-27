@@ -16,7 +16,7 @@ const initialState = {
       bags: false,
     },
     ratings: 0,
-    priceRange: 2000,
+    priceRange: 20000,
   };
 const filterReducer = (state, action) => {
     switch (action.type) {

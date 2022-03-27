@@ -4,27 +4,17 @@ import { BsStarFill } from "react-icons/bs";
 import DiscountedPrice from "../../utils/DiscountedPrice";
 import { useFilter } from "../../context/filterContext/FilterContext";
 import "./products.css";
+import { useCart } from "../../context/cartContext/CartContext";
 
 const Products = () => {
   const { filteredProducts } = useFilter();
-
+  const { cartDispatch } = useCart();
   return (
     <div className="child pd-products-layout">
       <div className="grid-column-layout">
         {filteredProducts.map(
-          ({
-            id,
-            title,
-            categoryName,
-            brand,
-            image,
-            tags,
-            price,
-            ratings,
-            stockQty,
-            discount,
-            comingSoon,
-          }) => {
+          (product) => {
+            const {id,image,title,tags,ratings,brand,categoryName,stockQty,price,discount,comingSoon} = product
             return (
               <div key={id} className="card-container parent-container">
                 <div className="parent-image">
@@ -35,7 +25,7 @@ const Products = () => {
                         <div className="tags-badge child-tags bg-baseblue">
                           New
                         </div>
-                      ) : (
+                      ) : ( 
                         <div className="tags-badge child-tags bg-baseorange">
                           Trending
                         </div>
@@ -60,7 +50,7 @@ const Products = () => {
                 {stockQty ? (
                   <>
                     <p className="price-box txt-xs fw-bold">
-                      Rs. {DiscountedPrice(price, discount)}{" "}
+                      Rs. {DiscountedPrice(price, discount)}
                       <s className="striked">Rs. {price} </s>
                       <span className="discount darkorange">
                         ({discount}% OFF)
@@ -69,15 +59,23 @@ const Products = () => {
                     <button className="btn buy-btn-padding txt-xs btn-solid cta-btn bg-lightteal white fw-semibold">
                       BUY NOW
                     </button>
-                    <button className="btn-secondary txt-xs">
+                    <button
+                      className="btn-secondary txt-xs"
+                      onClick={() =>
+                        cartDispatch({
+                          type: "ADD_TO_CART",
+                          payload: product,
+                        })
+                      }
+                    >
                       ADD TO CART
                     </button>
                   </>
                 ) : (
                   <>
                     <s className="price-box txt-xs fw-bold">
-                      Rs. 1345 <s className="striked">Rs. 1495</s>
-                      <span className="discount darkorange">(10% OFF)</span>
+                      Rs. {DiscountedPrice(price, discount)} <s className="striked">Rs. {price}</s>
+                      <span className="discount darkorange">({discount}% OFF)</span>
                     </s>
                     <button
                       className="btn buy-btn-padding txt-xs btn-solid white fw-semibold btn-disable"

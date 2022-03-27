@@ -5,8 +5,10 @@ import { FaSearch } from "react-icons/fa";
 import { BsHeart } from "react-icons/bs";
 import "./navicons.css"
 import NavIconsStyles from "../NavIconsStyles";
+import { useCart } from "../../../context/cartContext/CartContext";
 
 const NavIcons = () => {
+  const {cartState} = useCart()
   return (
     <NavIconsStyles>
       <button className="search-btn-alone" type="submit">
@@ -24,14 +26,17 @@ const NavIcons = () => {
         </div>
       </Link>
       <Link to="/cart">
-        <div class="badge-parent">
+        
+        <div className="badge-parent">
           <FaShoppingCart
             className="navbar-icons gray icon white"
             title="Cart"
           />
-          <div className="badge-font icons-disp bg-basepink badge-top white">
-            10
+          {(cartState.totalCartItems!==0)&&<div className="badge-font icons-disp bg-basepink badge-top white">
+            {cartState.totalCartItems}
           </div>
+        }
+          
         </div>
       </Link>
     </NavIconsStyles>
