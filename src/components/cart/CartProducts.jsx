@@ -1,12 +1,16 @@
 import React from "react";
 import { MdLocationPin } from "react-icons/md";
-import { BsHeart } from "react-icons/bs";
+import { BsHeart,BsHeartFill } from "react-icons/bs";
 import { useCart } from "../../context/cartContext/CartContext";
 import "../../components/products/products.css";
 import DiscountedPrice from "../../utils/DiscountedPrice";
+import { useWishlist } from "../../context/wishlistContext/WishlistContext";
+import { findInWishlist } from "../../utils/findInWishlist";
 
 const CartProducts = () => {
   const { cartState, cartDispatch } = useCart();
+  const {wishlistState,wishlistDispatch} = useWishlist()
+  const {wishlist} = wishlistState
   return (
     <div className="child cart-pg-product">
       <div className="space-between alignitems-c wrapit seperator-lightgray padtb-1 mb-2">
@@ -47,9 +51,25 @@ const CartProducts = () => {
               </div>
               <div>
                 <button className="btn-secondary txt-s" onClick={()=>cartDispatch({type:"REMOVE_FROM_CART",payload:product})}> REMOVE</button>
-                <button className="btn-secondary txt-s baseteal">
-                  <BsHeart /> WISHLIST
-                </button>
+                
+                {(findInWishlist(wishlist,product))?<button className="btn-secondary txt-s baseteal" 
+                onClick={() =>
+                    wishlistDispatch({
+                      type: "REMOVE_FROM_WISHLIST",
+                      payload: product,
+                    })
+                  }>
+                  <BsHeartFill />REMOVE FROM WISHLIST</button>:<button className="btn-secondary txt-s baseteal" 
+                onClick={() =>
+                    wishlistDispatch({
+                      type: "ADD_TO_WISHLIST",
+                      payload: product,
+                    })
+                  }>
+                  <BsHeart /> ADD TO YOUR WISHLIST 
+                </button>}
+                
+                
               </div>
             </div>
           );
@@ -60,3 +80,5 @@ const CartProducts = () => {
 };
 
 export default CartProducts;
+
+

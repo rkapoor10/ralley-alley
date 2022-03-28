@@ -28,7 +28,7 @@ const Category = () => {
         {categoryList.map(({ _id: categoryId, categoryName, description }) => {
           return (
             <div key={categoryId} className="catg-card">
-              <Link to="/products">
+              <Link to={`/products?categorySelected=${categoryName}`}>
                 <div className="overlay-grid">
                   <div className="circle center background bg-baseorange"></div>
                   <div className="center center-flex-column white content">

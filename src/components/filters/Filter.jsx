@@ -62,8 +62,9 @@ const FilterSidebar = () => {
                     id="checkbox-1"
                     type="checkbox"
                     name="checkbox"
-                    value={state.category[categoryName.toLowerCase]}
-                    onClick={() =>
+                    value={state.category[categoryName.toLowerCase()]}
+                    checked={state.category[categoryName.toLowerCase()]}
+                    onChange={() =>
                       dispatch({
                         type: "CATEGORY_FILTER",
                         payload: categoryName.toLowerCase(),
@@ -87,7 +88,7 @@ const FilterSidebar = () => {
                     type="radio"
                     name="radio"
                     value={state.ratings === rating}
-                    onClick={() => {
+                    onChange={() => {
                       dispatch({ type: "RATINGS_FILTER", payload: rating });
                     }}
                   />

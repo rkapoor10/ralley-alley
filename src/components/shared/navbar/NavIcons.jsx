@@ -6,9 +6,11 @@ import { BsHeart } from "react-icons/bs";
 import "./navicons.css"
 import NavIconsStyles from "../NavIconsStyles";
 import { useCart } from "../../../context/cartContext/CartContext";
+import { useWishlist } from "../../../context/wishlistContext/WishlistContext";
 
 const NavIcons = () => {
   const {cartState} = useCart()
+  const {wishlistState} = useWishlist()
   return (
     <NavIconsStyles>
       <button className="search-btn-alone" type="submit">
@@ -20,9 +22,9 @@ const NavIcons = () => {
       <Link to="/wishlist">
         <div className="badge-parent">
           <BsHeart className="navbar-icons gray icon white" title="Cart" />
-          <div className="badge-font icons-disp bg-basepink badge-top white">
-            10
-          </div>
+          {(wishlistState.wishlist.length!==0)&&<div className="badge-font icons-disp bg-basepink badge-top white">
+            {wishlistState.wishlist.length}
+        </div>}
         </div>
       </Link>
       <Link to="/cart">
