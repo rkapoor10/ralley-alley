@@ -3,6 +3,7 @@ import Footer from "../../components/shared/footer/FooterComponent";
 import Navbar from "../../components/shared/navbar/NavbarComponent";
 import WishlistProducts from "../../components/wishlist/WishlistProducts";
 
+
 const WishlistPage = () => {
   return (
     <div className="wishlist-pg-layout">
