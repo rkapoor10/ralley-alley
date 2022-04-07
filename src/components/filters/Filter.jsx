@@ -59,7 +59,7 @@ const FilterSidebar = () => {
               return (
                 <label key={categoryName} className="txt-xs" htmlFor="checkbox-1">
                   <input
-                    id="checkbox-1"
+                    id={categoryName}
                     type="checkbox"
                     name="checkbox"
                     value={state.category[categoryName.toLowerCase()]}

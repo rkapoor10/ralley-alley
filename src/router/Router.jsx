@@ -7,6 +7,7 @@ import WishlistPage from "../pages/wishlist/WishlistPage";
 import CartPage from "../pages/cart/CartPage";
 import SignupForm from "../pages/auth/SignupForm";
 import LoginForm from "../pages/auth/LoginForm";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
       <Route path="/cart" element={<CartPage/>}/>
       <Route path="/login" element={<LoginForm/>}/>
       <Route path="/Signup" element={<SignupForm/>}/>
+      <Route path="*" element={<ErrorPage/>} />
     </Routes>
   );
 };

@@ -7,6 +7,7 @@ import "./products.css";
 import { useCart } from "../../context/cartContext/CartContext";
 import { useWishlist } from "../../context/wishlistContext/WishlistContext";
 import { findInWishlist } from "../../utils/findInWishlist";
+import { toast } from "react-toastify";
 
 const Products = () => {
   const { filteredProducts } = useFilter();
@@ -48,24 +49,26 @@ const Products = () => {
                   {findInWishlist(wishlistState.wishlist, product) ? (
                     <button
                       className="btn-round btn-heart txt-s lightteal child-wishlist"
-                      onClick={() =>
+                      onClick={() => {
                         wishlistDispatch({
                           type: "REMOVE_FROM_WISHLIST",
                           payload: product,
-                        })
-                      }
+                        });
+                        toast.success("Removed from Wishlist ");
+                      }}
                     >
                       <BsHeartFill />
                     </button>
                   ) : (
                     <button
                       className="btn-round btn-heart txt-s lightteal child-wishlist"
-                      onClick={() =>
+                      onClick={() => {
                         wishlistDispatch({
                           type: "ADD_TO_WISHLIST",
                           payload: product,
-                        })
-                      }
+                        });
+                        toast.success("Addded to Wishlist ");
+                      }}
                     >
                       <BsHeart />
                     </button>
@@ -98,12 +101,13 @@ const Products = () => {
                   </button>
                   <button
                     className="btn-secondary txt-xs"
-                    onClick={() =>
+                    onClick={() => {
                       cartDispatch({
                         type: "ADD_TO_CART",
                         payload: product,
-                      })
-                    }
+                      });
+                      toast.success("Addded to Cart ");
+                    }}
                   >
                     ADD TO CART
                   </button>

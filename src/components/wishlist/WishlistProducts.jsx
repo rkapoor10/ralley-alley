@@ -3,10 +3,11 @@ import { BsHeartFill } from "react-icons/bs";
 import DiscountedPrice from "../../utils/DiscountedPrice";
 import { useWishlist } from "../../context/wishlistContext/WishlistContext";
 import { useCart } from "../../context/cartContext/CartContext";
+import { toast } from "react-toastify";
 
 const WishlistProducts = () => {
   const { wishlistState, wishlistDispatch } = useWishlist();
-  const {wishlist} = wishlistState;
+  const { wishlist } = wishlistState;
   const { cartDispatch } = useCart();
   return (
     <>
@@ -14,7 +15,13 @@ const WishlistProducts = () => {
         <h3 className="baseteal">
           My Wishlist <BsHeartFill className="basered" />
         </h3>
-        <p className="txt-m gray">{wishlist.length!==0?<span>{wishlist.length} ITEMS</span>:<span>Wishlilst is empty 😐</span>}</p>
+        <p className="txt-m gray">
+          {wishlist.length !== 0 ? (
+            <span>{wishlist.length} ITEMS</span>
+          ) : (
+            <span>Wishlilst is empty 😐</span>
+          )}
+        </p>
       </div>
 
       <div className="grid-column-layout">
@@ -28,12 +35,13 @@ const WishlistProducts = () => {
                 <div className="tags-flex">
                   <button
                     className="btn-round txt-s lightteal child-wishlist"
-                    onClick={() =>
+                    onClick={() => {
                       wishlistDispatch({
                         type: "REMOVE_FROM_WISHLIST",
                         payload: product,
-                      })
-                    }
+                      });
+                      toast.success("Removed from Wishlist");
+                    }}
                   >
                     <BsHeartFill className="basered" />
                   </button>
@@ -54,12 +62,13 @@ const WishlistProducts = () => {
               </p>
               <button
                 className="btn-secondary txt-xs"
-                onClick={() =>
+                onClick={() => {
                   cartDispatch({
                     type: "ADD_TO_CART",
                     payload: product,
-                  })
-                }
+                  });
+                  toast.success("Added to Cart");
+                }}
               >
                 ADD TO CART
               </button>
