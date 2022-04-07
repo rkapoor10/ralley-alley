@@ -9,7 +9,7 @@ Henceforth, brings you the top brands from the world of Badminton.
 
 
 ## Live Link
- *[Live Website](https://rally-alley.netlify.app/)*
+ *[Live Website](https://rallyalley.netlify.app/)*
  
 ## Deployment Status
  [![Netlify Status](https://api.netlify.com/api/v1/badges/7b36e178-fb6e-4c9d-abc7-4b39247a3c65/deploy-status)](https://rally-alley.netlify.app/)
@@ -17,20 +17,20 @@ Henceforth, brings you the top brands from the world of Badminton.
 
 ## Features
 
-- [Home Page](https://rally-alley.netlify.app/)
-- [Product Listing Page](https://rally-alley.netlify.app/products-page/products.html)
-- [Filters](https://rally-alley.netlify.app/products-page/products.html) by
+- [Home Page](https://rallyalley.netlify.app/home)
+- [Product Listing Page](https://rallyalley.netlify.app/products)
+- [Filters](https://rallyalley.netlify.app/products) by
   - Price
   - Category
   - Ratings
   - Sort
   - Discounts 
   - Clear All - to remove filters
-- [Cart Management Page](https://rally-alley.netlify.app/cart-pages/cart.html)
-- [Wishlist Management Page](https://rally-alley.netlify.app/wishlist/wishlist.html)
+- [Cart Management Page](https://rallyalley.netlify.app/products)
+- [Wishlist Management Page](https://rallyalley.netlify.app/wishlist)
 - Authentication
-  - [Sign-up](https://rally-alley.netlify.app/signup/signup.html)
-  - [Login](https://rally-alley.netlify.app/login/login.html)
+  - [Sign-up](https://rallyalley.netlify.app/signup)
+  - [Login](https://rallyalley.netlify.app/login)
   - Logout - present at top on wishlist page
 - Search - present in navbar of the website
 - Checkout - present on Cart Page
