@@ -14,7 +14,8 @@ function App() {
       <Link to="/wishlist">Wishlist Page || </Link>
       <Link to="/cart">Cart Page || </Link>
       <Link to="/login">Login Form || </Link>
-      <Link to="/signup">SignUp Form </Link>
+      <Link to="/signup">SignUp Form ||</Link>
+      <Link to="/brokenpath">Broken Link</Link>
       <Router />
       <ToastContainer
         position="bottom-center"
